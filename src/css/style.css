@@ -418,6 +418,7 @@ i {
 
 .project-section {
   padding-bottom: 150px;
+  transition: all 0.5s ease;
 }
 
 .project-section .title-holder {
@@ -528,6 +529,7 @@ i {
   background-repeat: no-repeat;
   background-position: 50% 50%;
   max-height: 978px;
+  transition: all 0.5s ease;
 }
 
 .news-section h2 {
@@ -782,6 +784,7 @@ i {
 
 .contact-section {
   position: relative;
+  transition: all 0.5s ease;
 }
 
 .contact-section #map {
