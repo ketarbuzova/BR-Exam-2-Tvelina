@@ -1,0 +1,110 @@
+.project-section {
+    padding-bottom: 150px;
+
+    .title-holder {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        padding-bottom: 147px;
+
+        &::before {
+            display: block;
+            content: "";
+            height: 1px;
+            width: 100px;
+            background-color: $dark-blue;
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            top: -30px;
+        }
+    }
+
+    .project-holder {
+        display: flex;
+        justify-content: space-between;
+
+        .image-holder {
+            width: 630px;
+            height: 470px;
+            position: relative;
+
+            &::before {
+                display: block;
+                content: '';
+                width: 630px;
+                height: 470px;
+                position: absolute;
+                z-index: -1;
+            }
+        }
+
+        .project-content {
+            max-width: 470px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-start;
+            align-self: flex-end;
+
+            .project-title {
+                font-family: $font-family;
+                padding-bottom: 19px;
+                font-weight: 700;
+                font-size: 43px;
+                line-height: 54px;
+                color: $dark-blue;
+            }
+
+            .text-holder {
+                padding-bottom: 40px;
+            }
+
+            .btn-project {
+                border-style: 1px solid $dark-blue;
+            }
+
+            .project-text {
+                padding: 60px 0 23px;
+                font-family: 'Open Sans';
+                font-style: italic;
+                font-weight: 400;
+                font-size: 15px;
+                line-height: 20px;
+                color: $black;
+
+                i {
+                    color: $dark-blue;
+                    font-size: 17px;
+                    padding-right: 16px;
+                }
+            }
+        }
+    }
+
+    .project-left {
+        padding-bottom: 127px;
+
+        .image-holder {
+            &::before {
+                background-color: $blue;
+                right: 40%;
+                bottom: 10%;
+            }
+        }
+    }
+
+    .project-right {
+        display: flex;
+        flex-direction: row-reverse;
+
+        .image-holder {
+            &::before {
+                background-color: $accent;
+                left: 40%;
+                bottom: 10%;
+            }
+        }
+    }
+}
+

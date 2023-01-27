@@ -1,0 +1,133 @@
+.contact-section {
+    position: relative;
+
+    #map {
+        width: 100%;
+        height: 700px;
+    }
+
+    .title-holder {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        padding-bottom: 42px;
+
+        &::before {
+            display: block;
+            content: "";
+            height: 1px;
+            width: 100px;
+            background-color: $dark-blue;
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            top: -20px;
+        }
+    }
+
+    .contact-holder {
+        position: absolute;
+        bottom: -150px;
+        left: 25%;
+        width: 100%;
+        max-width: 770px;
+        height: 450px;
+        padding: 60px;
+        background-color: $white;
+        z-index: 5;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: 50% 100%;
+    }
+
+    .contact-wrapper {
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        .col {
+            width: 50%;
+            align-items: flex-start;
+
+            .contact-item {
+                padding-bottom: 40px;
+
+                span {
+                    color: $black;
+                }
+
+                i {
+                    color: $accent;
+                    font-size: 17;
+                    padding-right: 10px;
+                }
+            }
+
+            &:last-of-type {
+                display: flex;
+                flex-direction: column;
+                max-width: 310px;
+                width: 100%;
+                justify-content: center;
+                align-items: flex-end;
+            }
+
+            .btn {
+                &.btn-form {
+                    padding: 12px 33px 12px;
+                    max-width: 140px;
+                    border: 1px solid $black;
+                    font-size: 18px;
+                    line-height: 27px;
+                    color: $black;
+                }
+                &:hover {
+                    background-color: $black;
+                    border: 1px solid $black;
+                    color: $white;
+                } 
+            }
+
+            .form-content {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+
+                input {
+                    width: 310px;
+                    padding: 0 0 14px;
+                    margin-bottom: 33px;
+                    border: none;
+                    outline: none;
+                    border-bottom: 1px solid rgb(44, 64, 88, 0.2);
+                    background-color: transparent;
+                    font-family: $font-family;
+                    font-size: 18px;
+                    line-height: 27px;
+                    opacity: 0.2;
+                    transition: all 0.3s ease;
+
+                    &:focus,
+                    &:valid,
+                    &:invalid,
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+      
+@media(max-width:525px) {
+    .contact-holder {
+        width: 100%;
+        position: static;
+        transform: translateX(0%);
+        margin: auto;
+    }
+      
+        #map {  
+            height: 400px;
+        }
+    }
+}

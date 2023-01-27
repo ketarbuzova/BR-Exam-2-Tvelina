@@ -1,0 +1,186 @@
+.news-section {
+    padding: 150px 0 120px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    max-height: 978px;
+
+    h2 {
+        color: $white;
+        padding-bottom: 90px;
+        position: relative;
+        display: flex;
+        justify-content: center;
+
+        &::before {
+            display: block;
+            content: '';
+            height: 1px;
+            width: 100px;
+            background-color: $white;
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            top: -30px;
+        }
+    }
+
+    .news-slider {
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .news-slider-wrp {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .news-pagination {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        position: relative;
+        margin-top: 46px;
+    }
+
+    .swiper-pagination-bullet {
+        display: block;
+        content: '';
+        border-radius: 50%;
+        border: 1px solid $white;
+        background-color: transparent;
+        transition: all 0.3s ease;
+    }
+
+    .swiper-pagination-bullet-active {
+        background-color: $white;
+    }
+
+    .news-slider-btns {
+        max-width: 1370px;
+        width: 100%;
+        height: 100%;
+        z-index: 3;
+        display: flex;
+        position: relative;
+
+        .news-slider-left {
+            position: absolute;
+            left: 80px;
+            bottom: 350px;
+        }
+    
+        .news-slider-right {
+            position: absolute;
+            right: -1340px;
+            bottom: 350px;
+        }
+
+        .arrow-btn {
+            display: block;
+            position: relative;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 1px solid $white;
+            transition: all 0.7s;
+            box-sizing: border-box;
+            z-index: 10;
+            cursor: pointer;
+    
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+          
+        .arrow-left {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: '';
+            width: 8px;
+            height: 8px;
+            margin: -5px 0 0 -3px;
+            border-left: 1px solid $white;
+            border-bottom: 1px solid $white;
+            -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+            box-sizing: border-box;
+        }
+          
+        .arrow-right {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            content: '';
+            width: 8px;
+            height: 8px;
+            margin: -5px 0 0 -5px;
+            border-left: 1px solid $white;
+            border-bottom: 1px solid $white;
+            -webkit-transform: rotate(-135deg);
+            transform: rotate(-135deg);
+            box-sizing: border-box;
+        }
+    }
+}
+
+.article-card {
+    display: block;
+    max-width: 370px;
+    width: 100%;
+    height: 514px;
+    background-color: $white;
+
+    .article-holder {
+        .article-content {
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+
+            .text-holder {
+                margin: 0;
+            }
+        }
+        
+        .article-info {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            padding-left: 20px;
+            gap: 20px;
+  
+            .author-image-holder {
+                width: 60px;
+                height: 60px;
+                border-radius: 50%;
+                overflow: hidden;
+            }
+      
+            .author-info {
+                .article-author {
+                    display: block;
+                    font-family: $font-family;
+                    font-weight: 400;
+                    font-size: 18px;
+                    line-height: 22px;
+                    color: $dark-blue;
+                }
+      
+                .article-date {
+                    font-family: $font-family;
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 17px;
+                    color: $blue;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,107 @@
+.gallery-section {
+    padding: 150px 0;
+
+    .title-holder {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        padding-bottom: 90px;
+
+        &::before {
+            display: block;
+            content: "";
+            height: 1px;
+            width: 100px;
+            background-color: $dark-blue;
+            transform: translateX(-50%);
+            position: absolute;
+            left: 50%;
+            top: -30px;
+        }
+    }
+
+    .btn-short {
+        padding: 16px 56px 17px;
+        margin: 0 auto;
+        display: block;
+    }
+
+    .gallery-wrapper {
+        cursor: url('../img/zoom-icon.svg'), pointer;
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 10px;
+        grid-template-areas:
+        'item-1 item-2 item-3'
+        'item-1 item-4 item-5';
+        padding-bottom: 60px;
+    
+        .gallery-item {
+            .item-image {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    
+        .item-1 {
+          grid-area: item-1;
+        }
+    
+        .item-2 {
+          grid-area: item-2;
+        }
+    
+        .item-3 {
+          grid-area: item-3;
+        }
+    
+        .item-4 {
+          grid-area: item-4;
+        }
+    
+        .item-5 {
+          grid-area: item-5;
+        }
+    }
+}
+    
+.fancybox__container img {
+    width: 700px;
+    height: auto;
+}
+    
+.gallery__link {
+    display: inline-block;
+    padding: 16px 57px 17px 57px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    margin-top: 60px;
+}
+    
+@media (max-width:768px) {
+    .gallery-section {
+        .gallery-wrapper {
+            justify-content: center;
+            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 2fr 1fr 1fr;
+            grid-template-areas: 
+            'item-1 item-1'
+            'item-2 item-3'
+            'item-4 item-5';
+        }
+    }
+    
+    .fancybox__container img {
+        width: 450px;
+        height: auto;
+    }
+}
+    
+@media(max-width:525px) {
+    .fancybox__container img {
+        width: 240px;
+        height: auto;
+    }
+}
