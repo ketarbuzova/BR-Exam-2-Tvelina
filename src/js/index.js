@@ -127,8 +127,6 @@ const marker = new google.maps.Marker({
 const form = document.querySelector("form");
 const email = document.getElementById("email");
 const name = document.getElementById("name");
-const emailError = document.querySelector("#email + span.error");
-const nameError = document.querySelector("#email + span.error");
 
 email.addEventListener("input", (event) => {
   if (email.validity.valid) {
