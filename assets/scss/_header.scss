@@ -92,6 +92,10 @@
                 justify-content: space-around;
             }
 
+            &:last-of-type {
+                margin-right: 0;
+            }
+
             &:hover {
                 border: 1px solid $white;
                 background-color: $white;

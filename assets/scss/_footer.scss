@@ -8,6 +8,9 @@
 
     .footer-holder {
         padding: 203px 0 234px;
+        max-width: 770px;
+        width: 100%;
+        margin: 0 auto;
 
         .footer-wrapper {
             display: flex;
@@ -48,6 +51,10 @@
                             color: $white;
                             display: flex;
                             justify-content: space-around;
+                        }
+
+                        &:last-of-type {
+                            margin-right: 0;
                         }
             
                         &:hover {

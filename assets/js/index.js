@@ -23,6 +23,14 @@ window.addEventListener('scroll', function() {
   
 })
 
+//hero-section
+$(function() {
+  $('.scroll-down').click (function() {
+    $('html, body').animate({scrollTop: $('section.project-section').offset().top }, 'slow');
+    return false;
+  });
+});
+
 //gallery-section 
 const gallery = document.querySelector('.hero-slider');
 
@@ -50,20 +58,19 @@ if (window.innerWidth <= '768') {
 //news-section 
 const newsSlider = new Swiper('.news-slider', {
   loop: true,
-
+  autoplay: {
+    delay: 4000,
+  },
   pagination: {
     el: '.news-pagination',
   },
-
   navigation: {
     nextEl: '.news-slider-left',
     prevEl: '.news-slider-right',
   },
-
   slidesPerView: 3,
   spaceBetween: 30,
   breakpoints: {
-
     320: {
       slidesPerView: 1,
     },
@@ -116,4 +123,37 @@ const marker = new google.maps.Marker({
   },
 });
 }
-    
+
+const form = document.querySelector("form");
+const email = document.getElementById("email");
+const name = document.getElementById("name");
+const emailError = document.querySelector("#email + span.error");
+const nameError = document.querySelector("#email + span.error");
+
+email.addEventListener("input", (event) => {
+  if (email.validity.valid) {
+    emailError.textContent = ""; 
+    emailError.className = "error"; 
+  } else {
+    showError();
+  }
+});
+
+form.addEventListener("submit", (event) => {
+  if (!email.validity.valid) {
+    showError();
+    event.preventDefault();
+  }
+});
+
+function showError() {
+  if (email.validity.valueMissing) {
+    emailError.textContent = "You need to enter an email address.";
+  } else if (email.validity.typeMismatch) {
+    emailError.textContent = "Entered value needs to be an email address.";
+  } else if (email.validity.tooShort) {
+    emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+  }
+
+  emailError.className = "error active";
+}
