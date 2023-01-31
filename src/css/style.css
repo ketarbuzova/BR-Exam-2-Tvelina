@@ -828,7 +828,7 @@ i {
 .contact-section .contact-holder {
   position: absolute;
   bottom: -150px;
-  left: 25%;
+  left: 24%;
   width: 100%;
   max-width: 770px;
   height: 450px;
@@ -932,7 +932,7 @@ i {
 
 .contact-section .contact-wrapper .col .form-content input {
   width: 310px;
-  padding: 0 0 14px;
+  padding: 0 0 5px;
   margin-bottom: 33px;
   border: none;
   outline: none;
