@@ -6,6 +6,10 @@
     max-height: 978px;
     transition: all 0.5s ease;
 
+    .container {
+        position: relative;
+    }
+
     h2 {
         color: $white;
         padding-bottom: 90px;
@@ -61,44 +65,19 @@
         background-color: $white;
     }
 
-    .news-slider-btns {
-        max-width: 1370px;
-        width: 100%;
-        height: 100%;
-        z-index: 3;
-        display: flex;
-        position: relative;
+    .arrow-prev {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        left: -5%;
+        z-index: 99;
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #fff;
+        border-radius: 50%;
 
-        .news-slider-left {
-            position: absolute;
-            left: 80px;
-            bottom: 350px;
-        }
-    
-        .news-slider-right {
-            position: absolute;
-            right: -1340px;
-            bottom: 350px;
-        }
-
-        .arrow-btn {
-            display: block;
-            position: relative;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            border: 1px solid $white;
-            transition: all 0.7s;
-            box-sizing: border-box;
-            z-index: 10;
-            cursor: pointer;
-    
-            &:hover {
-                transform: scale(1.1);
-            }
-        }
-          
-        .arrow-left {
+        .arrow {
             position: absolute;
             top: 50%;
             left: 50%;
@@ -112,20 +91,34 @@
             transform: rotate(45deg);
             box-sizing: border-box;
         }
-          
-        .arrow-right {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            content: '';
-            width: 6px;
-            height: 6px;
-            margin: -3px 0 0 -3px;
-            border-left: 1px solid $white;
-            border-bottom: 1px solid $white;
-            -webkit-transform: rotate(-135deg);
-            transform: rotate(-135deg);
-            box-sizing: border-box;
+    }
+      
+    .arrow-next {
+        position: absolute;
+        top: 50%;
+        cursor: pointer;
+        right: -5%;
+        z-index: 99;
+        display: inline-block;
+        height: 40px;
+        width: 40px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+
+        .arrow {
+            &.arrow-right {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                content: '';
+                width: 6px;
+                height: 6px;
+                margin: -3px 0 0 -3px;
+                border-left: 1px solid $white;
+                border-bottom: 1px solid $white;
+                -webkit-transform: rotate(-135deg);
+                transform: rotate(-135deg);
+            }
         }
     }
 }

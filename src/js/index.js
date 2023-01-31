@@ -65,8 +65,8 @@ const newsSlider = new Swiper('.news-slider', {
     el: '.news-pagination',
   },
   navigation: {
-    nextEl: '.news-slider-left',
-    prevEl: '.news-slider-right',
+    nextEl: '.arrow-prev',
+    prevEl: '.arrow-next',
   },
   slidesPerView: 3,
   spaceBetween: 30,
@@ -86,8 +86,8 @@ const newsSlider = new Swiper('.news-slider', {
   },
 });
 
-const swiperPrev = document.querySelector('.news-slider-left');
-const swiperNext = document.querySelector('.news-slider-right');
+const swiperPrev = document.querySelector('.arrow-prev');
+const swiperNext = document.querySelector('.arrow-next');
 
 swiperPrev.addEventListener('click', () => {
   newsSlider.slidePrev();

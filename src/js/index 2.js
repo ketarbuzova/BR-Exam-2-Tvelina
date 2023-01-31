@@ -23,14 +23,6 @@ window.addEventListener('scroll', function() {
   
 })
 
-//hero-section
-$(function() {
-  $('.scroll-down').click (function() {
-    $('html, body').animate({scrollTop: $('section.project-section').offset().top }, 'slow');
-    return false;
-  });
-});
-
 //gallery-section 
 const gallery = document.querySelector('.hero-slider');
 
@@ -58,19 +50,20 @@ if (window.innerWidth <= '768') {
 //news-section 
 const newsSlider = new Swiper('.news-slider', {
   loop: true,
-  autoplay: {
-    delay: 4000,
-  },
+
   pagination: {
     el: '.news-pagination',
   },
+
   navigation: {
-    nextEl: '.arrow-prev',
-    prevEl: '.arrow-next',
+    nextEl: '.news-slider-left',
+    prevEl: '.news-slider-right',
   },
+
   slidesPerView: 3,
   spaceBetween: 30,
   breakpoints: {
+
     320: {
       slidesPerView: 1,
     },
@@ -86,8 +79,8 @@ const newsSlider = new Swiper('.news-slider', {
   },
 });
 
-const swiperPrev = document.querySelector('.arrow-prev');
-const swiperNext = document.querySelector('.arrow-next');
+const swiperPrev = document.querySelector('.news-slider-left');
+const swiperNext = document.querySelector('.news-slider-right');
 
 swiperPrev.addEventListener('click', () => {
   newsSlider.slidePrev();
@@ -123,34 +116,4 @@ const marker = new google.maps.Marker({
   },
 });
 }
-
-const form = document.querySelector("form");
-const email = document.getElementById("email");
-
-email.addEventListener("input", (event) => {
-  if (email.validity.valid) {
-    emailError.textContent = ""; 
-    emailError.className = "error"; 
-  } else {
-    showError();
-  }
-});
-
-form.addEventListener("submit", (event) => {
-  if (!email.validity.valid) {
-    showError();
-    event.preventDefault();
-  }
-});
-
-function showError() {
-  if (email.validity.valueMissing) {
-    emailError.textContent = "You need to enter an email address.";
-  } else if (email.validity.typeMismatch) {
-    emailError.textContent = "Entered value needs to be an email address.";
-  } else if (email.validity.tooShort) {
-    emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
-  }
-
-  emailError.className = "error active";
-}
+    
