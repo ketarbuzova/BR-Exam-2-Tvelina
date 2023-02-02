@@ -109,3 +109,13 @@
     }
 }
 
+@media(max-width: 930px) {
+    .project-holder {
+        flex-direction: column;
+
+        .project-content {
+            padding-top: 50px;
+        }
+    }
+}
+

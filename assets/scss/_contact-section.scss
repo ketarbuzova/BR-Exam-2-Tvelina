@@ -159,12 +159,24 @@
         }
     }
       
-@media(max-width:525px) {
+@media(max-width: 920px) {
     .contact-holder {
-        width: 100%;
         position: static;
-        transform: translateX(0%);
-        margin: auto;
+        height: 100%;
+        padding: 50px;
+
+        .contact-wrapper {
+            display: flex;
+            flex-direction: column;
+
+            .col {
+                width: 100%;
+
+                &:first-of-type {
+                    padding-left: 30px;
+                }
+            }
+        }
     }
       
         #map {  
