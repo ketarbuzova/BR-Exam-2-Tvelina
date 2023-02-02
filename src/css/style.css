@@ -889,51 +889,29 @@ i {
   color: #fff;
 }
 
-.contact-section .contact-wrapper .col input[type=email] {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 100%;
-  border: 1px solid #333;
-  margin: 0;
-  font-family: inherit;
-  font-size: 90%;
-  box-sizing: border-box;
-}
-
-.contact-section .contact-wrapper .col input:invalid {
-  border-color: #900;
-  background-color: #fdd;
-}
-
-.contact-section .contact-wrapper .col input:focus:invalid {
-  outline: none;
-}
-
 .contact-section .contact-wrapper .col .error {
   width: 100%;
   padding: 0;
   font-size: 80%;
-  color: white;
-  background-color: #900;
-  border-radius: 0 0 5px 5px;
-  box-sizing: border-box;
 }
 
 .contact-section .contact-wrapper .col .error.active {
   padding: 5px;
 }
 
-.contact-section .contact-wrapper .col .form-content {
+.contact-section .contact-wrapper .col .form {
   display: flex;
   flex-direction: column;
   padding-bottom: 30px;
 }
 
-.contact-section .contact-wrapper .col .form-content input {
+.contact-section .contact-wrapper .col .form .input-name {
+  margin-bottom: 33px;
+}
+
+.contact-section .contact-wrapper .col .form input {
   width: 310px;
   padding: 0 0 5px;
-  margin-bottom: 33px;
   border: none;
   outline: none;
   border-bottom: 1px solid rgba(44, 64, 88, 0.2);
@@ -945,15 +923,15 @@ i {
   transition: all 0.3s ease;
 }
 
-.contact-section .contact-wrapper .col .form-content input:focus,
-.contact-section .contact-wrapper .col .form-content input:valid,
-.contact-section .contact-wrapper .col .form-content input:invalid,
-.contact-section .contact-wrapper .col .form-content input:hover {
+.contact-section .contact-wrapper .col .form input:focus,
+.contact-section .contact-wrapper .col .form input:valid,
+.contact-section .contact-wrapper .col .form input:invalid,
+.contact-section .contact-wrapper .col .form input:hover {
   opacity: 1;
 }
 
-.contact-section .contact-wrapper .col .form-content input:last-of-type {
-  margin: 0;
+.contact-section .contact-wrapper .col .form input:last-of-type {
+  margin-bottom: 0;
 }
 
 .footer {

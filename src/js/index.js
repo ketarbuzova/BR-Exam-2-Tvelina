@@ -124,33 +124,87 @@ const marker = new google.maps.Marker({
 });
 }
 
-const form = document.querySelector("form");
-const email = document.getElementById("email");
+const contactForm = document.querySelector('.contact-form');
+const name = contactForm.querySelector('.form-input-name');
+const email = contactForm.querySelector('.form-input-email');
+const formBtn = document.querySelector('.btn-form');
 
-email.addEventListener("input", (event) => {
-  if (email.validity.valid) {
-    emailError.textContent = ""; 
-    emailError.className = "error"; 
-  } else {
-    showError();
-  }
-});
-
-form.addEventListener("submit", (event) => {
-  if (!email.validity.valid) {
-    showError();
-    event.preventDefault();
-  }
-});
-
-function showError() {
-  if (email.validity.valueMissing) {
-    emailError.textContent = "You need to enter an email address.";
-  } else if (email.validity.typeMismatch) {
-    emailError.textContent = "Entered value needs to be an email address.";
-  } else if (email.validity.tooShort) {
-    emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
-  }
-
-  emailError.className = "error active";
+function error(message, element) {
+  element.style.borderColor = 'red';
+  let errorEl = document.createElement('span');
+  errorEl.className = "error";
+  errorEl.style.color = 'red';
+  errorEl.innerText = 'Enter your ' + message + ', please';
+  element.after(errorEl);
 }
+
+function clear() {
+  this.style.borderColor = '#737171';
+  if (this.nextSibling && this.nextSibling.className == 'error') {
+    this.nextSibling.remove();
+  }
+}
+
+function checkEmail() {
+  let result = ! /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(email.value);
+  if (!email.value || result) {
+    error('e-mail', email); return false;
+  } else return true;
+}
+
+function checkName() {
+  let result = !/^[a-zA-Z_-]+( [a-zA-Z_-]+)*|[а-яА-Я_-]+( [а-яА-Я_-]+)*$/.test(name.value);
+  if (!name.value || result) {
+    error('name', name); return false;
+  } else return true;
+}
+
+name.addEventListener('focusout', checkName);
+name.addEventListener('focusin', clear);
+email.addEventListener('focusout', checkEmail);
+email.addEventListener('focusin', clear);
+formBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  clear.call(name);
+  clear.call(email);
+  if (checkName() && checkEmail()) {
+    localStorage.setItem('name', name.value);
+    localStorage.setItem('email', email.value);
+    name.value = '';
+    email.value = '';
+    formBtn.value = 'thanks';
+    setTimeout(() => { formBtn.value = 'Submit'; }, 1500);
+  }
+});
+
+
+// const form = document.querySelector("form");
+// const email = document.getElementById("email");
+
+// email.addEventListener("input", (event) => {
+//   if (email.validity.valid) {
+//     emailError.textContent = ""; 
+//     emailError.className = "error"; 
+//   } else {
+//     showError();
+//   }
+// });
+
+// form.addEventListener("submit", (event) => {
+//   if (!email.validity.valid) {
+//     showError();
+//     event.preventDefault();
+//   }
+// });
+
+// function showError() {
+//   if (email.validity.valueMissing) {
+//     emailError.textContent = "You need to enter an email address.";
+//   } else if (email.validity.typeMismatch) {
+//     emailError.textContent = "Entered value needs to be an email address.";
+//   } else if (email.validity.tooShort) {
+//     emailError.textContent = `Email should be at least ${email.minLength} characters; you entered ${email.value.length}.`;
+//   }
+
+//   emailError.className = "error active";
+// }
