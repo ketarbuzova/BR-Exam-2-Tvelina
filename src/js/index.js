@@ -32,8 +32,6 @@ $(function() {
 });
 
 //gallery-section 
-const gallery = document.querySelector('.hero-slider');
-
 const gallerySlider = new Swiper('.hero-slider', {
     loop: true,
     direction: "vertical",
@@ -96,6 +94,15 @@ swiperNext.addEventListener('click', () => {
   newsSlider.slideNext();
 });
 
+if (window.innerWidth <= '768') {
+  newsSlider.disable();
+  document.querySelector('.arrow-prev').style.display = 'none';
+}
+if (window.innerWidth <= '768') {
+  newsSlider.disable();
+  document.querySelector('.arrow-next').style.display = 'none';
+}
+
 //gallery-section 
 Fancybox.bind('[data-fancybox="gallery"]', {
   caption: function (fancybox, carousel, slide) {
@@ -109,12 +116,12 @@ Fancybox.bind('[data-fancybox="gallery"]', {
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 40.6686, lng: -73.899},
-    zoom: 43.5,
+    zoom: 20,
     mapId: '2f084b4895741534'
   });
 
 const marker = new google.maps.Marker({
-  position: { lat: 40.6781, lng: -73.8981 },
+  position: {lat: 40.6686, lng: -73.899},
   map: map,
   title: "Monticello",
   icon: {
